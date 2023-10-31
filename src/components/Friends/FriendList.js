@@ -1,8 +1,8 @@
 import React from 'react';
 import FriendListItem from './FriendListItem';
 import styled from 'styled-components';
+import friendsData from './friends.json';
 
-// Створення стилів для FriendList
 const FriendListContainer = styled.ul`
   list-style: none;
   padding: 0;
@@ -13,15 +13,15 @@ const FriendListContainer = styled.ul`
   flex-direction: column;
 `;
 
-const FriendList = ({ friends }) => {
+const FriendList = () => {
   return (
     <FriendListContainer>
-      {friends.map(friend => (
+      {friendsData.map(friend => (
         <FriendListItem
           key={friend.id}
           avatar={friend.avatar}
           name={friend.name}
-          isOnline={friend.isOnline}
+          online={friend.isOnline}
         />
       ))}
     </FriendListContainer>
